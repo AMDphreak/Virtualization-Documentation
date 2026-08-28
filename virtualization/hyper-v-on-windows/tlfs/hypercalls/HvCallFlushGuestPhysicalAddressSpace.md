@@ -12,6 +12,8 @@ ms.topic: reference
 
 The HvCallFlushGuestPhysicalAddressSpace hypercall invalidates cached L2 GPA to GPA mappings within a second level address space.
 
+Architecture: x64 only.
+
 ## Interface
 
  ```c

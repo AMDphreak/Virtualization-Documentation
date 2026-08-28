@@ -1,6 +1,6 @@
 ---
-title: HvFlushVirtualAddressList
-description: HvFlushVirtualAddressList hypercall
+title: HvCallFlushVirtualAddressList
+description: HvCallFlushVirtualAddressList hypercall
 keywords: hyper-v
 author: alexgrest
 ms.author: hvdev
@@ -8,9 +8,11 @@ ms.date: 10/15/2020
 ms.topic: reference
 ---
 
-# HvFlushVirtualAddressList
+# HvCallFlushVirtualAddressList
 
 The HvCallFlushVirtualAddressList hypercall invalidates portions of the virtual TLB that belong to a specified address space.
+
+Architecture: x64 only.
 
 ## Interface
 
@@ -20,8 +22,8 @@ HvCallFlushVirtualAddressList(
     _In_ HV_ADDRESS_SPACE_ID AddressSpace,
     _In_ HV_FLUSH_FLAGS Flags,
     _In_ UINT64 ProcessorMask,
-    _Inout_ PUINT32 GvaCount,
-    _In_reads_(GvaCount) PCHV_GVA GvaRangeList
+    _Inout_ UINT32* GvaCount,
+    _In_reads_(*GvaCount) const HV_GVA* GvaRangeList
     );
  ```
 
@@ -54,7 +56,7 @@ If a target virtual processor’s TLB requires flushing and that virtual process
 
 | Name                    | Offset     | Size     | Information Provided                      |
 |-------------------------|------------|----------|-------------------------------------------|
-| `AddressSpace`          | 0          | 8        | Specifies an address space ID (a CR3 value). |
+| `AddressSpace`          | 0          | 8        | Specifies an address space ID (CR3 value). |
 | `Flags`                 | 8          | 8        | Set of flag bits that modify the operation of the flush. |
 | `ProcessorMask`         | 16         | 8        | Processor mask indicating which processors should be affected by the flush operation. |
 

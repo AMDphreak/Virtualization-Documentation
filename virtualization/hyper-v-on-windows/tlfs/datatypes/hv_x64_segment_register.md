@@ -12,6 +12,8 @@ ms.topic: reference
 
 Segment register state is encoded as follows:
 
+Architecture: x64 only.
+
 ## Syntax
 
 ```c

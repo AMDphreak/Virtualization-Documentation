@@ -10,6 +10,7 @@ ms.topic: reference
 
 # HV_CONNECTION_ID
 
+## Overview
 Connections are identified by 32-bit IDs. The high 8 bits are reserved and must be zero. All connection IDs are unique within a partition.
 
 ## Syntax

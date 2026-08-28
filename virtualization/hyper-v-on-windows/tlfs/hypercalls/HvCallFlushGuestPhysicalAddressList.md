@@ -12,6 +12,8 @@ ms.topic: reference
 
 The HvCallFlushGuestPhysicalAddressList hypercall invalidates cached GVA / L2 GPA to GPA mappings within a portion of a second level address space.
 
+Architecture: x64 only.
+
 ## Interface
 
  ```c
@@ -19,7 +21,7 @@ HV_STATUS
 HvCallFlushGuestPhysicalAddressList(
     _In_ HV_SPA AddressSpace,
     _In_ UINT64 Flags,
-    _In_reads_(RangeCount) PHV_GPA_PAGE_RANGE GpaRangeList
+    _In_ HV_GPA_PAGE_RANGE* GpaRangeList // Reads RepCount elements
     );
  ```
 

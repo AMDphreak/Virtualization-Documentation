@@ -10,7 +10,7 @@ ms.topic: reference
 
 # HvCallGetVpIndexFromApicId
 
-The HvCallGetVpIndexFromApicId allows the caller to retrieve a VP index for the VP with the specified APID ID.
+The HvCallGetVpIndexFromApicId allows the caller to retrieve a VP index for the VP with the specified hardware processor ID (APIC ID on x64, MPIDR on ARM64).
 
 ## Interface
 
@@ -19,9 +19,9 @@ HV_STATUS
 HvCallGetVpIndexFromApicId(
     _In_ HV_PARTITION_ID PartitionId,
     _In_ HV_VTL TargetVtl,
-    _Inout_ PUINT32 ApicIdCoount,
-    _In_reads_(ApicIdCount) PHV_APIC_ID ApicIdList,
-    _Out_writes(ApicIdCount) PHV_VP_INDEX VpIndexList
+    _Inout_ UINT32* ApicIdCount,
+    _In_reads_(ApicIdCount) HV_PROCESSOR_HW_ID* ApicIdList,
+    _Out_writes(ApicIdCount) HV_VP_INDEX* VpIndexList
     );
 
  ```
@@ -42,14 +42,14 @@ HvCallGetVpIndexFromApicId(
 
 | Name                    | Offset     | Size     | Information Provided                      |
 |-------------------------|------------|----------|-------------------------------------------|
-| `ApicId`                | 0          | 4        | APIC ID of the VP                         |
-| Padding                 | 4          | 4        |                                           |
+| `ProcessorHwId`         | 0          | 4 (x64) or 8 (ARM64) | Hardware processor ID: APIC ID (UINT32) on x64, MPIDR value (UINT64) on ARM64 |
+| Padding                 | 4 or 8     | 4 or 0   |                                           |
 
 ## Output List Element
 
 | Name                    | Offset     | Size     | Information Provided                      |
 |-------------------------|------------|----------|-------------------------------------------|
-| `VpIndex`               | 0          | 4        | Index of the VP with the specified APIC ID|
+| `VpIndex`               | 0          | 4        | Index of the VP with the specified hardware processor ID |
 | Padding                 | 4          | 4        |                                           |
 
 ## Return Values

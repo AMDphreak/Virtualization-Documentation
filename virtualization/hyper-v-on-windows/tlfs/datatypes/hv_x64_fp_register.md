@@ -12,6 +12,8 @@ ms.topic: reference
 
 Floating point registers are encoded as 80-bit values.
 
+Architecture: x64 only.
+
 ## Syntax
 
 ```c

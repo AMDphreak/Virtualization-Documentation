@@ -2,9 +2,9 @@
 title: Windows container network drivers
 description: Network drivers and topologies for Windows containers.
 author: daschott
-ms.author: mosagie
+ms.author: roharwoo
 ms.date: 01/22/2025
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
 ---
 # Windows container network drivers

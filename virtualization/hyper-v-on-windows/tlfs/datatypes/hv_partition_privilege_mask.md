@@ -30,7 +30,7 @@ typedef struct
     UINT64 AccessPartitionReferenceTsc:1;
     UINT64 AccessGuestIdleReg:1;
     UINT64 AccessFrequencyRegs:1;
-    UINT64 AccessDebugRegs:1;
+    UINT64 Reserved:1;
     UINT64 AccessReenlightenmentControls:1
     UINT64 Reserved1:18;
 
@@ -60,7 +60,7 @@ typedef struct
 } HV_PARTITION_PRIVILEGE_MASK;
  ```
 
-Each privilege controls access to a set of synthetic MSRs or hypercalls.
+Each privilege controls access to a set of synthetic MSRs and/or hypercalls.
 
 | Privilege Flag                        | Meaning                                       |
 |---------------------------------------|-----------------------------------------------|
@@ -76,7 +76,6 @@ Each privilege controls access to a set of synthetic MSRs or hypercalls.
 |`AccessPartitionReferenceTsc`          | The partition has access to the reference TSC. |
 |`AccessGuestIdleReg`                   | The partition has access to the synthetic MSR that allows the guest to enter the guest idle state. |
 |`AccessFrequencyRegs`                  | The partition has access to the synthetic MSRs that supply the TSC and APIC frequencies, if supported. |
-|`AccessDebugRegs`                      | The partition has access to the synthetic MSRs used for some forms of guest debugging. |
 |`AccessReenlightenmentControls`        | The partition has access to reenlightenment controls. |
 |`CreatePartitions`                     | The partition can invoke the hypercall HvCallCreatePartition. The partition also can make any other hypercall that is restricted to operating on children. |
 |`AccessPartitionId`                    | The partition can invoke the hypercall HvCallGetPartitionId to obtain its own partition ID. |
@@ -87,7 +86,7 @@ Each privilege controls access to a set of synthetic MSRs or hypercalls.
 |`PostMessages`                         | The partition can invoke the hypercall HvCallPostMessage. |
 |`ConnectPort`                          | The partition can invoke the hypercall HvCallConnectPort. |
 |`AccessStats`                          | The partition can invoke the hypercalls HvCallMapStatsPage and HvCallUnmapStatsPage. |
-|`Debugging`                            | The partition can invoke the hypercalls HvCallPostDebugData, HvCallRetrieveDebugData and HvCallResetDebugSession. |
+|`Debugging`                            | The partition has access to debugging related synthetic MSRs and can invoke the hypercalls HvCallPostDebugData, HvCallRetrieveDebugData and HvCallResetDebugSession. |
 |`CpuManagement`                        | The partition can invoke various hypercalls for CPU management. |
 |`AccessVSM`                            | The partition can use [VSM](../vsm.md). |
 |`AccessVpRegisters`                    | The partition can invoke the hypercalls HvCallSetVpRegisters and HvCallGetVpRegisters. |

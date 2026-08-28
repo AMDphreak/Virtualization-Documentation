@@ -30,6 +30,9 @@ typedef union
         //
         HV_VP_VTL_CONTROL VtlControl;
 
+        //
+        // Nested virtualization fields.
+        //
         HV_NESTED_ENLIGHTENMENTS_CONTROL NestedEnlightenmentsControl;
         BOOLEAN EnlightenVmEntry;
         UINT8 ReservedZ1[7];
@@ -46,8 +49,17 @@ typedef union
 
     UINT8 ReservedZBytePadding[HV_PAGE_SIZE];
 
-} HV_VP_ASSIST_PAGE, *PHV_VP_ASSIST_PAGE;
- ```
+} HV_VP_ASSIST_PAGE;
+```
+
+## Architecture Differences
+
+| Field | x64 | ARM64 |
+|-------|-----|-------|
+| ApicAssist | Used for EOI assist with local APIC | Reserved (ARM64 uses GIC) |
+| NestedEnlightenmentsControl | Nested virtualization control | Reserved |
+| EnlightenVmEntry | Enlightened VMCS support | Reserved |
+| CurrentNestedVmcs | Current nested VMCS GPA | Reserved |
 
 ## See also
 

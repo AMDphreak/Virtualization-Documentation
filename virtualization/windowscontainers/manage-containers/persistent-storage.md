@@ -1,10 +1,10 @@
 ---
 title: Persistent storage in containers
 description: How Windows containers can use persistent storage.
-author: meaghanlewis
-ms.author: mosagie
+author: robinharwood
+ms.author: roharwoo
 ms.date: 01/23/2025
-ms.topic: conceptual
+ms.topic: how-to
 
 ---
 

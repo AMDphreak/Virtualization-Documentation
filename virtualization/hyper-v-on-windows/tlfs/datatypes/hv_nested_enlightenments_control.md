@@ -35,8 +35,8 @@ typedef struct
             UINT32 InterPartitionCommunication:1;
             UINT32 Reserved:31;
         };
-     } HypercallControls;
-} HV_NESTED_ENLIGHTENMENTS_CONTROL, *PHV_NESTED_ENLIGHTENMENTS_CONTROL;
+    } HypercallControls;
+} HV_NESTED_ENLIGHTENMENTS_CONTROL;
  ```
 
 ## See also

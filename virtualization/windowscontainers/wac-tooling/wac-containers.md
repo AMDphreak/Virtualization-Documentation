@@ -2,10 +2,11 @@
 title: Run containers on Windows Admin Center
 description: Run a container on Windows Admin Center.
 author: vrapolinario
-ms.author: mosagie
+ms.author: roharwoo
 ms.date: 01/23/2025
 ms.topic: how-to
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
+ms.custom: sfi-image-nochange
 ---
 
 # Run new containers using Windows Admin Center

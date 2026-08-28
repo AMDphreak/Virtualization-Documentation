@@ -1,10 +1,10 @@
 ---
 title: Secure Windows containers
 description: Learn how to define the security boundaries of Windows containers.
-author: meaghanlewis
-ms.author: mosagie
+author: robinharwood
+ms.author: roharwoo
 ms.date: 01/23/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.assetid:
 ---
 # Secure Windows containers

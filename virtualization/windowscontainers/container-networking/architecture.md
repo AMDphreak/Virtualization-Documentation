@@ -2,10 +2,11 @@
 title: Windows container networking
 description: Introduction to architecture of Windows container networks.
 author: daschott
-ms.author: mosagie
+ms.author: roharwoo
 ms.date: 01/22/2025
 ms.topic: overview
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
+ms.custom: sfi-image-nochange
 ---
 # Windows container networking
 

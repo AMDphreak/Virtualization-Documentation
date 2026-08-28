@@ -10,6 +10,8 @@ ms.topic: reference
 
 # HV_X64_MSR_NPIEP_CONFIG_CONTENTS
 
+Architecture: x64 only.
+
 ## Syntax
 
 ```c

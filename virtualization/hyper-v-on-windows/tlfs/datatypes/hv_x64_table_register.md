@@ -12,6 +12,8 @@ ms.topic: reference
 
 Table registers are similar to segment registers, but they have no selector or attributes, and the limit is restricted to 16 bits.
 
+Architecture: x64 only.
+
 ## Syntax
 
 ```c
